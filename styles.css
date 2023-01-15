@@ -7,7 +7,12 @@
 body {
     display: flex;
     justify-content: center;
-    background-color: gray;
+    background-color: #2563eb;
+}
+
+.cardscontainer {
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -35,9 +40,9 @@ body {
 
 .card {
     background-color: white;
-    border-left: 6px solid #facc15;
+    border-left: 6px solid #00070e;
     border-radius: 10px;
-    width: 80%;
+    width: 50%;
     height: 200px;
     margin: 30px 0;
     margin-left: 20px;
@@ -57,4 +62,50 @@ body {
 
 .deleteDiv {
     display: flex;
+    gap: 5px;
+}
+
+.cards {
+    display: flex;
+}
+
+.form input {
+    background-color: black;
+    color: white;
+    box-shadow: 5px 5px 5px black;
+    font-weight: bold;
+}
+
+#btn {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    box-shadow: 10px 5px 5px black;
+    cursor: pointer;
+}
+
+.cardText {
+    font-weight: bold;
+    font-size: large;
+}
+
+.readCheckDiv {
+    display: flex;
+}
+
+.deleteButton {
+    padding: 1px 6px;
+    background-color: red;
+    border-radius: 100%;
+    cursor: pointer;
+    
+}
+
+
+#btn:hover {
+    transform: scale(1.1);
+}
+
+.deleteButton:hover {
+    transform: scale(1.1);
 }

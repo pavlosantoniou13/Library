@@ -27,6 +27,9 @@ function addBookToLibrary(ev) {
     let para2 = document.createElement("p"); 
     let para3 = document.createElement("p"); 
     let read = document.createElement("p") 
+    let readCheckDiv = document.createElement("div")
+    let readCheck = document.createElement("input")
+    readCheck.type = "checkbox"
     //check box read or not
     let jscheckbox = document.createElement('input')
     jscheckbox.type = "checkbox";
@@ -49,41 +52,23 @@ function addBookToLibrary(ev) {
     cardText.appendChild(para1).className = "title"
     cardText.appendChild(para2).className = "author"
     cardText.appendChild(para3).className = "pages"
-    cardText.appendChild(read).className = "read" 
     cardText.appendChild(DeleteDiv).className = "deleteDiv"
     DeleteDiv.appendChild(deleteCheckBoxDiv)
     DeleteDiv.appendChild(checkboxDelete).className = "deleteButton"
-    
+    cardText.appendChild(readCheckDiv).className = "readCheckDiv"
+    readCheckDiv.appendChild(read).className = "read" 
+    readCheckDiv.appendChild(readCheck)
     
 
-
-   let checkbox = document.getElementById("checkbox")
-   if(checkbox.checked) {
-    para1.textContent =  "title:" +  " " + title.value
+    para1.textContent =  "Title:" +  " " + title.value
     para2.textContent = "Author:" + " " + author.value
-    para3.textContent = "pages:" + " " + pages.value
+    para3.textContent = "Pages:" + " " + pages.value
     read.textContent = "Read"
     deleteCheckBoxDiv.textContent = "Delete" 
     
     
-    } else {
-        para1.textContent =  "title:" +  " " + title.value
-        para2.textContent = "Author:" + " " + author.value
-        para3.textContent = "pages:" + " " + pages.value
-        read.textContent = "Not Read"
-        deleteCheckBoxDiv.textContent = "Delete" 
-    }
-
-    
-    
-    
-
 }
-
-
-
-   
-
+ 
 function deleteBook(event) {
     const id = event.target.value;
     myLibrary = myLibrary.filter(
@@ -97,15 +82,5 @@ function deleteBook(event) {
     event.target.closest('.card').remove();
 }
 
-
-
-
-
-
-
-
 const SubmitBtn =  document.getElementById('btn')
 SubmitBtn.addEventListener('click', addBookToLibrary)
-
-
-
